@@ -15,6 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// looks for environment variable first. if not found, app runs locally
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/budget", 
   {

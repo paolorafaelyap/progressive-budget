@@ -56,3 +56,11 @@ function checkDatabase() {
     };
 }
 
+function saveRec(record) {
+    const db = request.result;
+    const transaction = db.transaction([pendingObjectName], `readwrite`);
+    //add method used to add store
+    store.add(record);
+}
+
+window.addEventListener(`online`, checkDatabase);
